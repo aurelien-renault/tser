@@ -1,0 +1,2 @@
+Name,Strategy,RMSE,MAE,Run time (extr),Run time (tsf),Num features,Time/feature,Run time (classif),Total time,MAPE
+Covid3Month,intervals_c22 + catch22 + minirocket + tsfeatures + signature + featuretools + tsfel,0.06471248023729483,0.04350353548441104,0.0,0.0,2242.0,0.0,0.009063243865966797,0.009063243865966797,35331522118761.164

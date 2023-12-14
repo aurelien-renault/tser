@@ -1,0 +1,2 @@
+Name,Strategy,Num dim,RMSE,MAE,Run time (extr),Run time (tsf),Num features,Time/feature,Run time (classif),Total time
+Covid3Month,multirocket,1,0.04047544314254896,0.03149401551013293,0.0,0.0,1008.0,0.0,2.5043065547943115,2.5043065547943115

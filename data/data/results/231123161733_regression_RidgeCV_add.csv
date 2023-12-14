@@ -1,0 +1,2 @@
+Name,Strategy,Num dim,RMSE,MAE,MAPE,Run time (extr),Run time (tsf),Num features,Time/feature,Run time (classif),Total time
+Covid3Month,catch22,1,3.8141246338364594,2.662117655932732,2109518200130695.5,0.0,0.0,106.0,0.0,0.06525015830993652,0.06525015830993652
