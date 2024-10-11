@@ -1,6 +1,5 @@
 # AFE-TSER
 Automatic Feature Engineering for Time Series Extrinsic Regression
-(stemming from [AFE-TSC](https://github.com/aurelien-renault/Automatic-Feature-Engineering-for-TSC) by A. Renault)
 
 Examples :
 
