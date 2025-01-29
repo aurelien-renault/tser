@@ -8,8 +8,8 @@ def lib_stacking(
     stack_order = 'Accuracy',
     test_all=False, 
     FILEPATH="exp/tests_lib/tabs/fts/res_rf_100trees_1k_fullbakeoff.csv",
-    #DG DATAPATH="scripts/UCRArchive_2018",
-    #DG FEATURESPATH="scripts/UCRArchive_2018",
+    # DATAPATH="scripts/UCRArchive_2018",
+    # FEATURESPATH="scripts/UCRArchive_2018",
     DATAPATH="data",
     FEATURESPATH="data",
     scale=False,
@@ -194,7 +194,7 @@ if __name__ == '__main__':
         get_regression_datasets()
 
     # go to home directory
-    #DG os.chdir(os.path.expanduser("~"))
+    # os.chdir(os.path.expanduser("~"))
 
     # alternatively if results are located in different csv files, one can pass a list of path as
     # it is the case in the following example and then pass it to FILEPATH: 

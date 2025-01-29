@@ -4,7 +4,7 @@ import json
 import argparse
 import matplotlib.pyplot as plt
 from numpy import float32
-from numpy import nan_to_num #DG
+from numpy import nan_to_num #
 from tqdm import tqdm
 
 from xgboost import XGBClassifier, XGBRegressor
@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.svm import SVC, SVR
 from sklearn.linear_model import *
 from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
-#DG from sktime.contrib.vector_classifiers._rotation_forest import RotationForest
+# from sktime.contrib.vector_classifiers._rotation_forest import RotationForest
 from sklearn.metrics import (roc_auc_score, balanced_accuracy_score, f1_score, log_loss, accuracy_score, 
                                 mean_squared_error, mean_absolute_error, mean_absolute_percentage_error)
 from sklearn.utils.extmath import softmax
@@ -66,7 +66,7 @@ class Evaluator(BaseEstimator):
 
         if self.extractor_name == 'intervals_c22':
             self.extractor_name = 'intervals'
-            #DG lib_kwargs['transformers'] = catch22.Catch22(n_jobs=lib_kwargs["n_jobs"])
+            # lib_kwargs['transformers'] = catch22.Catch22(n_jobs=lib_kwargs["n_jobs"])
             lib_kwargs['transformers'] = catch22.Catch22(n_jobs=1)
             lib_kwargs['n_intervals'] *= 10 / 22 # update n_intervals wrt max_features
             lib_kwargs['n_intervals'] = int(lib_kwargs['n_intervals'])
@@ -123,7 +123,7 @@ class Evaluator(BaseEstimator):
             start = time.time()
             X_tsf = self.extractor.transform(X, y).astype(float32).fillna(0)
             self.time_tsf = time.time() - start
-        #DG return self.scaler.transform(X_tsf.fillna(0)) if self.scaler else X_tsf
+        # return self.scaler.transform(X_tsf.fillna(0)) if self.scaler else X_tsf
         return self.scaler.transform(nan_to_num(X_tsf, nan=0)) if self.scaler else X_tsf
     
     def predict(self, X):
@@ -486,13 +486,13 @@ if __name__ == '__main__':
     if not os.path.isdir(os.path.join(args.savepath, "results")): 
         os.mkdir(os.path.join(args.savepath, "results"))
 
-    #DG time-stamped filename
+    # time-stamped filename
     tstamp = strftime("%y%m%d%H%M%S")
     filename = f"results/{tstamp}_{args.task}_{args.estimator}_{args.raw}_{args.library}_{args.base}.csv"
-    #DG count_id = 0
+    # count_id = 0
     # no results file overwrite
-    #DG while os.path.isfile(os.path.join(args.savepath, filename)):
-    #DG    count_id += 1
-    #DG    filename = f"results/{args.task}_{args.estimator}_{count_id}.csv"
+    # while os.path.isfile(os.path.join(args.savepath, filename)):
+    #    count_id += 1
+    #    filename = f"results/{args.task}_{args.estimator}_{count_id}.csv"
         
     res.to_csv(os.path.join(args.savepath, filename), index=False)
